@@ -19,3 +19,22 @@ var persona = {
     nombre: 'Christopher',
     edad: 28
 };
+
+//Funciones
+//Es un bloque de código que realiza una tarea específica o calcula un valor y puede ser reutilizado en varias partes de tu programa.
+
+//Declarativas
+
+function miFuncion() {
+    return 3;
+}
+
+miFuncion();//esta es la manera de invocar una funcion
+
+//Expresion
+
+var miFuncion = function(a,b) {
+    return a + b;
+}
+
+miFuncion();
