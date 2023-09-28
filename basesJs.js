@@ -201,3 +201,44 @@ switch (numero) {
         }
     }    
 };
+
+//Listas
+//Arrays - conocidos como "arreglo" en algunos lenguajes, es una estructura de datos que se utiliza para almacenar una coleccion de datos (valores) del mismo tipo.
+
+
+let frutas = ["manzana", "platano", "cereza", "fresa"];
+
+//El array se crea similar a una variable asignando valor dentro de corchetes
+
+frutas[2] //array[indice]
+"cereza" //posicion del elemento
+
+
+//Propiedad .length
+let cantidad = frutas.length;  
+console.log(cantidad); 4
+//array.length(); para saber la cantidad de elementos que tiene un array.
+
+//Metodos de arrays (Mutabilidad) - array.metodo(argumento);
+//En los siguientes ejemplos genero una variable para guardar el resultado del metodo utilizado, sin embargo, puedes aplicar el metodo directo para obtener resultado en consola.
+
+
+let nuevaFrutaFinal = frutas.push("uvas", "naranjas");
+console.log(frutas); (5) ['manzana', 'platano', 'cereza', 'fresa', 'uvas', 'naranjas']
+//array.push(); para agregar uno o varios elementos al final del array original.
+
+let nuevaFrutaInicio = frutas.unshift("pera", "pepino");
+console.log(frutas); (7) ['pera', 'pepino', 'manzana', 'platano', 'cereza', 'fresa', 'uvas', 'naranjas']
+//array.unshift(); agrega uno o varios elementos al inicio del array original.
+
+let quitaFrutaUltima = frutas.pop();
+console.log(frutas); (4) ['pera', 'pepino', 'manzana', 'platano', 'cereza', 'fresa', 'uvas']
+//array.pop(); extrae o quita el elemento del final del array original.
+
+let quitaFrutaInicio = frutas.shift();
+console.log(frutas); (5) ['pepino', 'manzana', 'platano', 'cereza', 'fresa', 'uvas']
+//array.shift(); extrae o quita el elemento del inicio del array original.
+
+let conoceIndexFruta = frutas.indexOf("platano");
+console.log(frutas.indexOf("platano")); 2
+//array.indexOf(); muestra el indice [] del elemento especificado como argumento ().
