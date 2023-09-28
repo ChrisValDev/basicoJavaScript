@@ -202,8 +202,7 @@ switch (numero) {
     }    
 };
 
-//Listas
-//Arrays - conocidos como "arreglo" en algunos lenguajes, es una estructura de datos que se utiliza para almacenar una coleccion de datos (valores) del mismo tipo.
+//Arrays (Listas) - conocidos como "arreglo" en algunos lenguajes, es una estructura de datos que se utiliza para almacenar una coleccion de datos (valores) del mismo tipo.
 
 
 let frutas = ["manzana", "platano", "cereza", "fresa"];
@@ -242,3 +241,159 @@ console.log(frutas); (5) ['pepino', 'manzana', 'platano', 'cereza', 'fresa', 'uv
 let conoceIndexFruta = frutas.indexOf("platano");
 console.log(frutas.indexOf("platano")); 2
 //array.indexOf(); muestra el indice [] del elemento especificado como argumento ().
+
+//Objetos
+//Son estructuras de datos que permiten almacenar valores mediante propiedad: atributo, se utilizan para representar objetos del mundo real de manera mas cercana.
+
+let nombreObjeto = {
+  propiedad1: "atributoString",
+  propiedad2: 23, //atributoNumero
+  metodo: function(){
+    //tarea a realizar    
+  }
+}; 
+//Las propiedades son tipo de dato "texto".
+//Los atributos pueden ser de diferentes tipos de datos.
+
+let miAuto = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  annio: 2020
+};
+
+//Parar acceder a las propiedades del objeto se puede hacer de dos maneras, corchetes o por el punto.
+
+objeto["propiedad"];
+miAuto["marca"]; //"Toyota"
+objeto.propiedad;
+miAuto.marca; //"Toyota" 
+
+//Dentro del objeto se pueden crear Metodos que son muy similares a una funcion.
+let miAuto = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  annio: 2020,
+  detalleDelAuto: function(){
+    console.log(`Auto ${this.modelo} ${this.annio}`);//this hacer referencia al objeto que en este caso es miAuto.
+  }
+};
+miAuto.detalleDelAuto(); Auto Corolla 2020
+
+//Para acceder a los metodos del objeto aplica igual que las propiedades.
+objeto["metodo"]; objeto["metodo"]();
+miAuto["detalleDelAuto"]; //solo muestra que detalle.
+miAuto["detalleDelAuto"](); //con parentesis ejecuta la funcion.
+objeto.metodo; objeto.metodo();
+miAuto.detalleDelAuto; //solo muestra detalle.
+miAuto.detalleDelAuto(); //con parentesis ejecuta la funcion.
+
+//Para agregar propiedades a un objeto se realiza de la siguiente manera. Recuerda que puede ser mediante corchete [] o con el punto (.)
+
+objeto["nuevaPropiedad"] = "atributo"; objeto.nuevaPropiedad = "atributo";
+miAuto["color"] = "verde";
+miAuto.color = "verde";
+
+ 
+let miAuto = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  annio: 2020,
+  color: "verde",
+  detalleDelAuto: function(){
+    console.log("Encender automovil");
+  }
+};
+console.log(miAuto);
+
+//Para modificar las propiedades de un objeto, es muy similar a cuando creamos una, solo que ya existe la propiedad y por tanto de actualiza el atributo que va a tener.
+
+objeto["modificarPropiedad"] = "atributo"; objeto.modificarPropiedad = "atributo";
+miAuto["color"] = "rojo";
+miAuto.color = "rojo";
+
+let miAuto = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log("Encender automovil");
+  }
+};
+console.log(miAuto);
+
+//Para eliminar propiedades de un objeto se coloca al inicio la palabra delete.
+
+delete miAuto["marca"];
+delete miAuto.marca;
+
+console.log(miAuto);
+let miAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log("Encender automovil");
+  }
+};
+
+//El objeto contexto this, en objetos, el contexto this hace referencia al propio objeto, sirver para acceder a los atributos y metodos propios del objeto.
+
+//Se cambia la funcion detalle para mostrar un mensaje personalizado.
+
+let miAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log(`Auto ${modelo} del ${annio}.`);
+  }
+};
+miAuto.detalleDelAuto(); //ReferenceError: modelo is not defined.
+
+//Utilizando la notacion de punto (.) para acceder a los atributos de la propiedad.
+let miAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log(`Auto ${miAuto.modelo} del ${miAuto.annio}.`);
+  }
+};
+miAuto.detalleDelAuto(); //Auto Corolla del 2020.
+
+//Vamos a crear otro objeto con el mismo codigo.
+let otroAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log(`Auto ${miAuto.modelo} del ${miAuto.annio}.`);
+  }
+};
+otroAuto.detalleDelAuto(); //ReferenceError: miAuto is not defined.
+//Muestra un error de referencia al objeto miAuto, lo sencillo seria cambiar miAuto por otroAuto, sin embargo, lo ideal es no cambiar el codigo que puede ser reutilizado.
+
+//Para ello utilizamos el objeto contexto this para hacer referencia a nuestro objeto.
+let miAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log(`Auto ${this.modelo} del ${this.annio}.`);
+  }
+};
+miAuto.detalleDelAuto(); //Auto Corolla del 2020.
+
+let otroAuto = {
+  modelo: "Corolla",
+  annio: 2020,
+  color: "rojo",
+  detalleDelAuto: function(){
+    console.log(`Auto ${this.modelo} del ${this.annio}.`);
+  }
+};
+otroAuto.detalleDelAuto(); //Auto Corolla del 2020.
+//Ahora podremos crear varios objetos  sin cambiar una y otra vez la referencia al objeto this. Por eso podemos acceder a los atributos y metodos, independientemente del objeto creado.
+
+
