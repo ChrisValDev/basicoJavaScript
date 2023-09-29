@@ -396,4 +396,22 @@ let otroAuto = {
 otroAuto.detalleDelAuto(); //Auto Corolla del 2020.
 //Ahora podremos crear varios objetos  sin cambiar una y otra vez la referencia al objeto this. Por eso podemos acceder a los atributos y metodos, independientemente del objeto creado.
 
+//Funcion constructora, sirve para crear muchos objetos sin tener que hacerlo manualmente 1x1
+//Se deben de definir los parametros de la funcion, estos seran los atributos del objeto, que cambiaran con la nueva informacion asignada como argumentos. Los argumentos deben hacer referencia a cada uno del nuevo objeto, mediante el objeto contexto this.
 
+  function auto(brand, model, year) {
+    this.marca = brand;
+    this.modelo = model;
+    this.annio = year;
+    this.detalle = function() {
+        console.log(`Auto ${this.modelo} del ${this.annio}.`);
+    }
+  };
+  //si ejecutas la funcion auto(); aparecera un error. Es importante indicar que se va a construir una nueva instancia con la palabra reservada new
+
+  let miCar = new auto("Toyota", "Corolla", 2020);
+//De esta manera se pueden crear varios objetos con una funcion constructora que permita especificar atributos y metodos personalizados.
+
+let autoNuevo = new auto("Tesla", "Model 3", 2020);
+let autoNuevo2 = new auto("Tesla", "Model X", 2018);
+let autoNuevo3 = new auto("Toyota", "Corolla", 2022);
