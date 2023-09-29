@@ -3,7 +3,7 @@
 const h1 = document.querySelector('h1');
 const p = document.querySelector('p');
 const parrafito = document.querySelector('.parrafito');
-const pid = document.querySelector('#pid');
+const pid = document.getElementById('pid');
 const input = document.querySelector('input');
 //estas constantes se crean para poder ver los elementos que estan en el archivo HTML.
 
@@ -61,3 +61,20 @@ p.classList.replace("verde", "rojo");
 //En caso de input se puede agregar atributos y/o modificar sus valores.
 input.value = "1995";
 input.placeholder = "Escribe solo numeros aqui";
+
+// Creando elementos HTML desde JS.
+
+//document.createElement() se utiliza para crear un nuevo elemento HTML en el DOM (Document Object Model). Este nuevo elemento se crea en memoria, pero aún no se agrega al documento HTML visible en el navegador. Puedes utilizar este método para crear elementos como divs, párrafos, enlaces, imágenes, etc., y luego agregarlos al documento según sea necesario.
+document.createElement("img");
+
+const img = document.createElement("img");// se asigna a una constante el valor.
+
+img.setAttribute('src', 'https://tse2.mm.bing.net/th?id=OIP.I_ouHPvtcJ2uSRFUXxPuZQHaHP&pid=Api&P=0&h=180');//creando atributo y valor de elemento img.
+console.log(img);
+
+//append() metodo que se utiliza para agregar uno o varios elemento como hijo de otro elemento en el DOM (Document Object Model).
+pid.innerHTML = ""; //Eliminando el texto que esta dentro.
+pid.appendChild(img); //insertando la imagen dentro de HTMl como hijo de <p id="pid"><p>
+
+
+//La principal diferencia entre appendChild y append radica en su compatibilidad y en la capacidad de append para tomar múltiples argumentos y agregar varios elementos a la vez. Si necesitas una solución compatible con navegadores más antiguos, appendChild es la elección más segura. Sin embargo, si solo te preocupas por navegadores modernos y deseas una sintaxis más conveniente para agregar múltiples elementos, append es una opción válida.
