@@ -37,3 +37,27 @@ console.log(h1.getAttribute("pantalla")); "original"//modificando valor de atrib
 
 h1.setAttribute("cuarto", "cama"); //agregando un nuevo atributo con valor.
 
+//Modificando clases de elementos HTML desde JS
+
+//classList - propiedad que se utiliza en JavaScript para interactuar con las clases CSS de un elemento HTML. Proporciona métodos que facilitan la adición, eliminación y verificación de clases en un elemento. Esta propiedad es especialmente útil cuando deseas modificar el aspecto o el comportamiento de elementos HTML mediante JavaScript.
+
+//add(className)Este método agrega una clase CSS al elemento. Si la clase ya existe en el elemento, no se duplicará.
+p.classList.add("rojo");
+p.classList.add("verde");
+
+//remove(className)Este método elimina una clase CSS del elemento.
+p.classList.remove("rojo");
+
+//toggle(className)Este método agrega la clase si no está presente y la elimina si ya está presente. Es útil para alternar el estado de una clase en un elemento.
+p.classList.toggle("azul");
+
+//contains(className)Este método verifica si el elemento tiene una clase específica. Devuelve true si la clase está presente y false si no lo está.
+console.log(p.classList.contains("azul")); true
+console.log(p.classList.contains("amarillo")); false
+
+//replace(oldClass, newClass)Este método reemplaza una clase existente con una nueva.
+p.classList.replace("verde", "rojo");
+
+//En caso de input se puede agregar atributos y/o modificar sus valores.
+input.value = "1995";
+input.placeholder = "Escribe solo numeros aqui";
