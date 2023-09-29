@@ -25,3 +25,15 @@ h1.innerText = "Nuevo titulo <s> modificado";
 // innerHTML - propiedad permite acceder al contenido HTML dentro de un elemento HTML y también permite modificar dicho contenido. Puedes obtener el contenido de un elemento o asignarle nuevo contenido utilizando innerHTML.
 h1.innerHTML = "Nuevo titulo <s> modificado";
 
+//Interaccion de atributos en HTML desde JS
+
+// getAttribute -  método que permite obtener el valor de un atributo específico de un elemento HTML. Puedes utilizarlo para obtener valores de atributos como src, href, class, id, data-*, entre otros.
+console.log(h1.getAttribute("pantalla")); "generico"
+
+//setAttribute - método que permite establecer o cambiar el valor de un atributo en un elemento HTML. Puedes utilizarlo para modificar atributos existentes o agregar nuevos atributos a un elemento.
+//constante.setAttribute("nuevoAtributo", "valorDeAtributo");
+h1.setAttribute("pantalla", "original");
+console.log(h1.getAttribute("pantalla")); "original"//modificando valor de atributo existente.
+
+h1.setAttribute("cuarto", "cama"); //agregando un nuevo atributo con valor.
+
