@@ -415,3 +415,132 @@ otroAuto.detalleDelAuto(); //Auto Corolla del 2020.
 let autoNuevo = new auto("Tesla", "Model 3", 2020);
 let autoNuevo2 = new auto("Tesla", "Model X", 2018);
 let autoNuevo3 = new auto("Toyota", "Corolla", 2022);
+
+//Metodos de recorridos de arrays.
+
+let articulos = [
+  { nombre: "Bicicleta", costo: 3000 },
+  { nombre: "TV", costo: 2500 },
+  { nombre: "Libro", costo: 320 },
+  { nombre: "Celular", costo: 10000 },
+  { nombre: "Laptop", costo: 20000 },
+  { nombre: "Teclado", costo: 500 },
+  { nombre: "Audifonos", costo: 1700 }
+];//Esto es un array [] con objetos {} por dentro.\
+
+//array.filter(function(){});
+//se utiliza para crear un nuevo array con todos los elementos que cumplan con cierta condición especificada en una función de filtro. Esta función de filtro se aplica a cada elemento del array, y los elementos para los cuales la función devuelve true se incluyen en el nuevo array resultante.
+
+//La sintaxis general del método filter es la siguiente:
+const nuevoArray = arrayOriginal.filter(funcionDeFiltro(elemento, indice, array));
+
+
+let articulosFiltrados = articulos.filter(function(articulo){
+    return articulo.costo <= 2500;
+});
+//Lo siguiente muestra consola al llamar la variable articulosFiltrados.
+0: {nombre: 'TV', costo: 2500}
+1: {nombre: 'Libro', costo: 320}
+2: {nombre: 'Teclado', costo: 500}
+3: {nombre: 'Audifonos', costo: 1700}
+
+//otro ejemplo de filter
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//filtrar solo los numeros pares
+const numerosPares = numeros.filter(function(numero) {
+  return numero % 2 === 0;
+});
+console.log(numerosPares); //Resultado: [2, 4, 6, 8, 10]
+
+//array.map(function(){});
+//se utiliza para crear un nuevo array aplicando una función a cada elemento del array original. A diferencia de filter, que selecciona elementos basados en una condición, map transforma cada elemento del array original y crea un nuevo array con los resultados de aplicar la función de mapeo a cada elemento.
+
+//La sintaxis del metodo map es la siguiente
+const nuevoArray = arrayOriginal.map(funcionDeMap(elemento, indice, arreglo));
+
+let nombreArticulos = articulos.map(function(articulo){
+    return articulo.nombre;
+});
+//Lo siguiente muestra consola al llamar la variable nombreArticulos.
+(7) ['Bicicleta', 'TV', 'Libro', 'Celular', 'Laptop', 'Teclado', 'Audifonos']
+
+//Otro ejemplo de map
+const numeros = [1, 2, 3, 4, 5];
+// Elevar al cuadrado cada número en el array
+const cuadrados = numeros.map(function(numero) {
+  return numero * numero;
+});
+console.log(cuadrados); // Resultado: [1, 4, 9, 16, 25]
+
+//array.find(function(){});
+//se utiliza para encontrar el primer elemento en un array que cumple con una condición especificada en una función de prueba. Una vez que se encuentra el primer elemento que cumple con la condición, find() devuelve ese elemento y detiene la búsqueda, incluso si hay otros elementos que también cumplen con la condición.
+
+//La sintaxis general del método find() es la siguiente:
+const resultado = array.find(funcionDePrueba(elemento, indice, array));
+
+let encuentraArticulo = articulos.find(function(articulo){
+    return articulo.nombre = "Laptop";
+});
+//Lo siguiente muestra consola al llamar la variable encuentraArticulo.
+Object { costo:20000,nombre:Laptop }
+
+//otro ejemplo de find
+const personas = [
+  { nombre: "Juan", edad: 25 },
+  { nombre: "María", edad: 30 },
+  { nombre: "Luis", edad: 22 },
+];
+// Encontrar la primera persona que sea mayor de 25 años
+const personaMayorDe25 = personas.find(function(persona) {
+  return persona.edad > 25;
+});
+console.log(personaMayorDe25); // Resultado: { nombre: "María", edad: 30 }
+
+//array.forEach(function(){}); no guarda info en array
+//se utiliza para ejecutar una función en cada elemento de un array. Es una forma de iterar sobre los elementos de un array sin necesidad de utilizar un bucle for o while. forEach() toma una función de devolución de llamada (callback) como argumento y ejecuta esa función una vez para cada elemento en el array.
+
+//La sintaxis general del método forEach() es la siguiente:
+array.forEach(funcionDeCallback(elemento, indice, arreglo));
+
+articulos.forEach(function(articulo){
+    console.log(articulo.nombre);
+});
+//Lo siguiente muestra consola.
+Bicicleta
+TV
+Libro
+Celular
+Laptop
+Teclado
+Audifonos
+
+//Otro ejemplo de forEach
+const frutas = ["manzana", "banana", "naranja"];
+
+// Imprimir cada fruta en la consola
+frutas.forEach(function(fruta, indice) {
+  console.log(`Índice ${indice}: ${fruta}`);
+});
+
+
+//array.some(function(){});
+//se utiliza para verificar si al menos un elemento en un array cumple con una condición especificada en una función de prueba. El método devuelve true si al menos un elemento cumple con la condición y false si ninguno de los elementos la cumple.
+
+//La sintaxis general del método some() es la siguiente:
+const resultado = array.some(funcionDePrueba(elemento, indice, arreglo));
+
+let articulosBaratos = articulos.some(function(articulo){
+    return articulo.costo <= 700;
+}); 
+console.log(articulosBaratos); // Resultado: true
+
+//Otro ejemplo de some
+
+const numeros = [10, 20, 30, 40, 50];
+// Verificar si al menos un número es mayor que 35
+const algunNumeroMayor35 = numeros.some(function(numero) {
+  return numero > 35;
+});
+console.log(algunNumeroMayor35); // Resultado: true
+
+//El método some() es útil cuando deseas verificar si al menos un elemento en un array cumple con cierta condición. Si necesitas verificar si todos los elementos cumplen con la condición, puedes considerar utilizar el método every().
