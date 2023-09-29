@@ -544,3 +544,100 @@ const algunNumeroMayor35 = numeros.some(function(numero) {
 console.log(algunNumeroMayor35); // Resultado: true
 
 //El método some() es útil cuando deseas verificar si al menos un elemento en un array cumple con cierta condición. Si necesitas verificar si todos los elementos cumplen con la condición, puedes considerar utilizar el método every().
+
+//Loops
+//For (para)
+//se utiliza cuando sabes de antemano cuántas veces deseas que se ejecute (repita) el bloque de código. Se compone de tres partes: la inicialización, la condición y la expresión de iteración.
+
+//Estructura
+for (condicion) {
+    // Bloque de codigo
+};
+
+//for - Saludar a todas las personas del array.
+
+// Crear los numero del 1 al 10
+for (let num = 1; num <= 3; num++){
+    console.log(num)
+};
+
+//Recorriendo arrays con el ciclo for
+let personas = ["Christopher", "Jessica", "Vanessa", "Armando"];
+
+for(let i = 0; i < personas.length; i++){
+  console.log(personas[i]);
+}
+
+//Mediante una funcion
+function saludarPersonas(persona){
+    console.log(`Hola, ${persona}`);
+}
+
+for(let i = 0; i < personas.length; i++){
+    saludarPersonas(personas[i]);
+}
+
+//for of (para - de) - se utiliza para recorrer los valores de un array.
+
+//Estructura
+for (let elemento of array){
+      //Bloque de codigo.
+};
+
+let array = [5, 4, 3, 2, 1];
+//La variable elemento es la referencia a cada uno de los elementos del array.
+for (let elemento of array) {
+    console.log(elemento)
+};
+
+let personas = ["Christopher", "Jessica", "Vanessa", "Armando"];
+
+
+for(let persona of personas){
+    console.log(persona);
+}
+
+//Las limitaciones del ciclo for of es que solo accede al valor de cada uno de los elementos del array. Por lo tanto, no se podra modificar el array original por que se necesita su indice para acceder y cambiar su valor.
+
+//for in - (para - en) sirve para recorrer propiedades de un objeto
+let persona = { nombre: "Juan", edad: 30, ciudad: "México" };
+
+for (let propiedad in persona) {
+  console.log(propiedad + ": " + persona[propiedad]);
+}
+
+//While (mientras)se utiliza cuando deseas que el bloque de código se ejecute mientras se cumpla una condición. La condición se verifica antes de cada ejecución del bloque.
+//no se conoce la cantidad de veces que la estructura repetira una o varias instrucciones, aunque tambien se puede acoplar para que realice un determinado numero de repeticiones.
+
+//Estructura
+while (condicion) {
+    //Bloque de codigo
+    //Cambiar la condicion para salir del bucle
+};
+
+let contador = 0;
+while (contador < 5) {
+  console.log("Iteración " + contador);
+  contador++;//condicion para salir del bucle
+}
+
+//otro ejemplo
+let estudiantes = ["Pedro", "Antonio", "Carolina", "Paulina"];
+
+function saludarEstudiantes(estudiante){
+    console.log(`Hola, ${estudiante}`);
+}
+
+while(estudiantes.length > 0){
+  let estudiante = estudiantes.shift();
+  saludarEstudiantes(estudiante);
+}
+
+//do while (haz - mientras) es similar al bucle while, pero garantiza que el bloque de código se ejecute al menos una vez, ya que la condición se verifica después de la ejecución del bloque.
+
+let numero = 0;
+
+do {
+  console.log("Iteración " + numero);
+  numero++;
+} while (numero < 5);
