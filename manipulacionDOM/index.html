@@ -7,14 +7,22 @@
     <title>Manipulacion del DOM basica - Curso Practico de Javascript</title>
 </head>
 <body>
-    <h1 pantalla="generico">Manipulacion del DOM basica</h1>
+    <h1 >Manipulacion del DOM basica</h1>
 
-    <p>Esto es un parrafo de etiqueta</p>
-    <p class="parrafito">Esto es un parrafo con clase</p>
-    <p id="pid">Esto es un parrafo con ID</p>
-
-    <input placeholder="Escribe lo que quieras aqui">
+    <input id="calculo1" placeholder="Escribe lo que quieras aqui">
+    <input onchange="console.log('Cambio el valor de input')" id="calculo2" placeholder="Escribe lo que quieras aqui">
+    <!--onchange: se desencadena cuando el valor de un elemento HTML que admite cambios, como un campo de formulario <input> o un elemento <select>, cambia después de que el usuario realiza una acción, como escribir en un campo de texto o seleccionar una opción de un menú desplegable. -->
+    <button onclick="console.log('click del boton')" id="btnCalcular">Calcular</button>
+    <!--onclick: El evento onclick se desencadena cuando el usuario hace clic en un elemento HTML, como un botón (<button>) u otro elemento interactivo.-->
 
     <script src="./script.js"></script>
 </body>
+<!--Los eventos onchange y onclick son eventos en JavaScript que se utilizan para controlar la interacción del usuario con elementos HTML, como formularios y botones.
+    Otros eventos relacionados:
+
+- onmouseover y onmouseout: Se desencadenan cuando el cursor del mouse entra o sale de un elemento.
+- onkeydown, onkeyup y onkeypress: Se desencadenan cuando se presionan, sueltan o mantienen presionadas teclas en un elemento.
+- onsubmit: Se desencadena cuando se envía un formulario.
+- onload: Se desencadena cuando se completa la carga de una página.
+- onfocus y onblur: Se desencadenan cuando un elemento obtiene o pierde el foco (generalmente en campos de entrada de texto).-->
 </html>
