@@ -16,3 +16,12 @@ menuImg.addEventListener('click', toggleMobileMenu);
 function toggleMobileMenu() {
     mobileMenu.classList.toggle("inactive");
 }
+// Menu shopping car
+const viewCarrito = document.querySelector('.navbar-shopping-cart');
+const shoppingCarMenu = document.querySelector('.product-detail');
+
+viewCarrito.addEventListener('click', detalleByBuy);
+
+function detalleByBuy() {
+    shoppingCarMenu.classList.toggle('inactive');
+}
