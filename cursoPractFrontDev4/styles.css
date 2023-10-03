@@ -1,3 +1,5 @@
+/* General */
+
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -14,9 +16,12 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+
 .inactive {
     display: none;
 }
+
+/* Navbar general */
 
 nav {
     display: flex;
@@ -83,6 +88,8 @@ nav {
     color: var(--black);
 }
 
+/* Menu en desktop */
+
 .desktop-menu {
     position: absolute;
     background: var(--white);
@@ -121,6 +128,45 @@ nav {
     margin-bottom: 20px;
 }
 
+/* Menu en Mobile */
+
+.mobile-menu {
+    padding: 0 24px;
+    height: 100vh;
+}
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+}
+.mobile-menu ul {
+    box-sizing: border-box;
+    padding-top: 24px;
+    margin: 0;
+    list-style: none;
+}
+.mobile-menu .categories {
+    height: 60vh;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.mobile-menu ul li {
+    margin-bottom: 24px;
+}
+.mobile-menu .email {
+    font-size:  var(--sm);
+    font-weight: 300;
+}
+.mobile-menu .sign-out {
+    font-size:  var(--sm);
+    color: var(--hospital-green);
+}
+.mobile-menu .check {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 @media (max-width: 640px) {
     .menu {
         display: block;
