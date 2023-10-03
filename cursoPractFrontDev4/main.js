@@ -53,41 +53,29 @@ const productList = [];
 productList.push({
     name: "Bike",
     price: 120,
-    image: './icons/bt_add_to_cart.svg'
+    image: 'https://images.pexels.com/photos/819805/pexels-photo-819805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 });
 productList.push({
     name: "Pantalla",
     price: 220,
-    image: './icons/bt_add_to_cart.svg'
+    image: 'https://images.pexels.com/photos/819805/pexels-photo-819805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 });
 productList.push({
     name: "Computadora",
     price: 620,
-    image: './icons/bt_add_to_cart.svg'
+    image: 'https://images.pexels.com/photos/819805/pexels-photo-819805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 });
 
-/*
-<div class="product-card">
-    <img src="https://images.pexels.com/photos/819805/pexels-photo-819805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-    <div class="product-info">
-        <div>
-            <p>$120,00</p>
-            <p>Bike</p>
-        </div>
-    
-        <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="">
-        </figure>
-    </div>
-</div>
-*/
+const cardsContainer = document.querySelector('.cards-container');
 
+// Ciclo for para la creacion de los productos en la tienda.
 for (product of productList) {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
 
-    const img = document.createElement('img');
-    img.setAttribute('src', product.image);
+    const productCard = document.createElement('div');//se crea elemento div y se guarda en una constante productCard.
+    productCard.classList.add('product-card');//se agrega una clase al elemento div.
+
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);//se agrega un atributo src al elemento img.
 
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
@@ -95,13 +83,27 @@ for (product of productList) {
     const productInfoDiv = document.createElement('div');
 
     const productPrice = document.createElement('p');
-    productPrice.innerText = '$' + product.price;
+    productPrice.innerText = '$' + product.price;//se indica mostrar un texto en la etiqueta de parrafo (p) mediante innerText, tomando la informacion de objeto dentro del array productList mostrando el valor(atributo) de la propiedad(price).
 
     const productName = document.createElement('p');
-    productName.innerText = product.name;
+    productName.innerText = product.name;//Aqui mostrando la propiedad name del objeto.
 
-    const productInfoFigure = document.createElement('figure');
+    const productInfoFigure = document.createElement('figure');//Recuerda que con document.createElement('elemento'); se crean elementos(etiquetas) HTML desde JavaScript.
 
     const productImgCart = document.createElement('img');
     productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+
+//Asignacion de herencia. (etiquete padre e hijo)
+    productInfoDiv.appendChild(productPrice);
+    productInfoDiv.appendChild(productName);//generando herencia de hijo con appendChild en productPrice y productName hacia el padre productInfoDiv.
+
+    productInfoFigure.appendChild(productImgCart);
+
+    productInfo.appendChild(productInfoDiv);
+    productInfo.appendChild(productInfoFigure);
+
+    productCard.appendChild(productImg);
+    productCard.appendChild(productInfo);
+
+    cardsContainer.appendChild(productCard);
 }
