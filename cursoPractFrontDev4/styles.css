@@ -256,6 +256,7 @@ nav {
     grid-template-columns: repeat(auto-fill, 240px);/*repeat(auto-fill es para llenar con las grid que quepan en pantalla, 300px es el tamaño de ancho del grid)*/
     gap: 26px;
     place-content: center; /*ayuda a alinear la grid*/
+    margin-top: 20px;
 }
 .product-card {
     width: 240px;
