@@ -15,8 +15,6 @@ body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
-
-
 .inactive {
     display: none;
 }
@@ -131,7 +129,10 @@ nav {
 /* Menu en Mobile */
 
 .mobile-menu {
-    padding: 0 24px;
+    position: absolute;
+    background: var(--white);
+    top: 60px;
+    padding: 24px;
     height: 100vh;
 }
 .mobile-menu a {
@@ -141,12 +142,10 @@ nav {
 }
 .mobile-menu ul {
     box-sizing: border-box;
-    padding-top: 24px;
-    margin: 0;
+    padding-top: 24px 0 0;
     list-style: none;
 }
 .mobile-menu .categories {
-    height: 60vh;
     border-bottom: 1px solid var(--very-light-pink);
 }
 
@@ -174,5 +173,13 @@ nav {
     .navbar-left ul,
     .navbar-email {
         display: none;
-    }    
+    }
+    .desktop-menu {
+        display: none;
+    }
+}
+@media (min-width: 641px) {
+    .mobile-menu {
+        display: none;
+    }
 }
