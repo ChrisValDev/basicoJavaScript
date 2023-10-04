@@ -49,6 +49,13 @@ function toggleShoppingCar() {
     shoppingCar.classList.toggle('inactive');
 }
 
+//Detalle del producto
+const detailOfProduct = document.querySelector('.product-detail-second');
+
+function openProductDetailAside() {
+    detailOfProduct.classList.remove('inactive');
+}
+
 //Creacion de productos
 
 const productList = [];
@@ -78,6 +85,7 @@ function renderProducts(arr) {
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetailAside);
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
