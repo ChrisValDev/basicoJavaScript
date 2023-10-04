@@ -56,6 +56,16 @@ function openProductDetailAside() {
     detailOfProduct.classList.remove('inactive');
 }
 
+//Cerrar detalle del producto
+const botonProductClose = document.querySelector('.product-detail-close');
+
+botonProductClose.addEventListener('click', closeProductDetailAside);
+
+function closeProductDetailAside() {
+    detailOfProduct.classList.add('inactive');
+}
+
+
 //Creacion de productos
 
 const productList = [];
