@@ -174,7 +174,7 @@ nav {
 
 /* Aside (Product Detail) */
 
-.product-detail {
+.product-detail-first {
     background-color: var(--white);
     width: 360px;
     padding: 0 24px;
@@ -305,7 +305,7 @@ nav {
         display: none;
     }
 
-    .product-detail {
+    .product-detail-first {
         width: 100%;
     }
 
